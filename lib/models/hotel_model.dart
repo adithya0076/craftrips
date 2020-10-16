@@ -21,7 +21,7 @@ final List<Hotel> hotels = [
   ),
   Hotel(
     imageUrl: 'assets/images/grandkandyan.jpg',
-    name: 'Hotel Grand Kandyan',
+    name: 'Grand Kandyan',
     address: '89/10,Lady Gordon`s Drive,Kandy, 20000 Kandy, Sri Lanka',
     price: 300,
   ),
