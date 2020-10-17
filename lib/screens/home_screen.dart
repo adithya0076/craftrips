@@ -57,21 +57,13 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: EdgeInsets.only(left: 20.0, right: 120.0),
               
-              child: Container(
-                height: 100,
-                
-                child: Row(
-                  children: [
-                    Image(image: AssetImage('assets/images/craf4.png'),
-                    fit: BoxFit.cover,
-                    width: 300,
-                    
-                    ),
-
-                    
-                    
-                  ],
-                ),
+              child:Text('What would you like to find ?',
+              style: TextStyle(
+                fontSize: 30.0,
+                color: Colors.red[300],
+               fontFamily: "Roboto",
+               fontWeight: FontWeight.w300,
+              ),
               ),
               
             ),
