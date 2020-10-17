@@ -57,20 +57,21 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: EdgeInsets.only(left: 20.0, right: 120.0),
               
-              child: Row(
-                children: [
-                  Text(
-                    'CRAFTRIPS',
-                    style: TextStyle(
-                      color: Colors.red[300],
-                      
-                      fontSize: 30.0,
-                      fontWeight: FontWeight.w300,
+              child: Container(
+                height: 100,
+                
+                child: Row(
+                  children: [
+                    Image(image: AssetImage('assets/images/craf4.png'),
+                    fit: BoxFit.cover,
+                    width: 300,
+                    
                     ),
 
-                  ),
-                  
-                ],
+                    
+                    
+                  ],
+                ),
               ),
               
             ),
