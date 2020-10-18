@@ -3,6 +3,8 @@ import 'package:Craftrips/widgets/hotel_carousel.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'restaurent_screen.dart';
+
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -56,18 +58,16 @@ class _HomeScreenState extends State<HomeScreen> {
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(left: 20.0, right: 120.0),
-              
-              child:Text('What would you like to find ?',
-              style: TextStyle(
-                fontSize: 30.0,
-                color: Colors.red[300],
-               fontFamily: "Roboto",
-               fontWeight: FontWeight.w300,
+              child: Text(
+                'What would you like to find ?',
+                style: TextStyle(
+                  fontSize: 30.0,
+                  color: Colors.red[300],
+                  fontFamily: "Roboto",
+                  fontWeight: FontWeight.w300,
+                ),
               ),
-              ),
-              
             ),
-            
             SizedBox(
               height: 20.0,
             ),
@@ -98,6 +98,11 @@ class _HomeScreenState extends State<HomeScreen> {
           setState(() {
             _currentTab = value;
           });
+          if (_currentTab == value) {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => RestaurentScreen()),
+            );
+          }
         },
         items: [
           BottomNavigationBarItem(

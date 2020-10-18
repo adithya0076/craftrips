@@ -1,6 +1,6 @@
 import 'package:Craftrips/screens/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'dart:async';
+
 import 'package:splashscreen/splashscreen.dart';
 
 void main() => runApp(MyApp());
@@ -30,7 +30,7 @@ class Splash2 extends StatelessWidget {
       navigateAfterSeconds: new HomeScreen(),
       title: new Text(
           ' ',
-          
+
         
         textScaleFactor: 2,
       ),
