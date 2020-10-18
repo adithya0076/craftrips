@@ -41,7 +41,7 @@ dev_dependencies:
 flutter_icons:    
  android: "launcher_icon"    
  ios: true    
- image_path: "assets/images/craf4.png" 
+ image_path: "assets/images/craftripsnew.png" 
 # The following section is specific to Flutter.
 flutter:
 

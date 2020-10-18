@@ -35,7 +35,7 @@ class Splash2 extends StatelessWidget {
         textScaleFactor: 2,
       ),
      image:  new Image.asset(
-          'assets/images/craf4.png'),
+          'assets/images/craftripsnew.png'),
       loadingText: Text("Loading"),
       photoSize: 100.0,
       loaderColor: Colors.blue,

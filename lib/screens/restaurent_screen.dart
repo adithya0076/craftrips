@@ -28,17 +28,25 @@ class RestaurentScreen extends StatelessWidget {
                     child: ListView(
              children: <Widget>[
                Card(
+                 elevation: 5,
+                 shape: RoundedRectangleBorder(
+                   borderRadius: BorderRadius.circular(10),
+                 ),
                  child: ListTile(
                    leading: Image.asset('assets/images/murano.jpg'),
                    title: Text('Dinemore'),
                    subtitle: Text('Kandy,SriLanka'),
                    trailing: Icon(Icons.restaurant),
                    onTap: () {},
-
+                  
                  ),
                ),
                Divider(),
                Card(
+                    elevation: 5,
+                 shape: RoundedRectangleBorder(
+                   borderRadius: BorderRadius.circular(10),
+                   ),
                  child: ListTile(
                     leading: Image.asset('assets/images/mountblue.jpg'),
                    title: Text('Hill top'),
