@@ -25,16 +25,10 @@ final List<Hotel> hotels = [
     address: '89/10,Lady Gordon`s Drive,Kandy',
     price: 300,
   ),
-  Hotel(
+  /*Hotel(
     imageUrl: 'assets/images/ozo.jpg',
     name: 'Hotel OZO',
     address: 'No 31, Saranankara Mawatha,Kandy',
     price: 240,
-  ),
-   Hotel(
-    imageUrl: 'assets/images/mountblue.jpg',
-    name: 'Mount Blue',
-    address: 'No-352/15, Dharmaraja Mawatha,Kandy',
-    price: 240,
-  ),
+  ),*/
 ];
