@@ -24,25 +24,6 @@ class RestaurentScreen extends StatelessWidget {
       body: Column(
 	 
         children: <Widget>[
-		
-        /*  SizedBox(
-            height: 40,
-          ),
-		  Container(
-		  decoration: BoxDecoration( image: DecorationImage(image: AssetImage("assets/images/murano.jpg"), fit: BoxFit.cover),),
-         child: Padding(
-            padding: EdgeInsets.only(),
-            child: Text('Restaurents',
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.w300,
-              color: Colors.black,
-            ),
-         
-        ),*/
-         
-       //   ),
-		 // ),
            Expanded(
                     child: ListView(
              children: <Widget>[

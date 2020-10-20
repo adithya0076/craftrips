@@ -1,4 +1,4 @@
-import 'package:Craftrips/models/destination_model.dart';
+
 import 'package:Craftrips/models/hotel_model.dart';
 import 'package:flutter/material.dart';
 
@@ -39,7 +39,7 @@ class HotelCarousel extends StatelessWidget {
           height: 300.0,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: destinations.length,
+            itemCount: hotels.length,
             itemBuilder: (BuildContext context, int index) {
               Hotel hotel = hotels[index];
 

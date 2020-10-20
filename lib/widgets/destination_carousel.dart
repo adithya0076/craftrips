@@ -22,7 +22,7 @@ class DestinationCarousel extends StatelessWidget {
                 ),
               ),
               GestureDetector(
-                onTap: () => print('See All'),
+                onTap: () => print('See All now'),
                 child: Text(
                   'See All',
                   style: TextStyle(
