@@ -29,16 +29,20 @@ class Splash2 extends StatelessWidget {
       seconds: 6,
       navigateAfterSeconds: new HomeScreen(),
       title: new Text(
-          ' ',
-
-        
+        ' ',
         textScaleFactor: 2,
       ),
-     image:  new Image.asset(
-          'assets/images/craftripsnew.png'),
-      loadingText: Text("Loading"),
+      imageBackground: AssetImage("assets/images/hanthana.jpg"),
+      image: new Image.asset('assets/images/craftripsnew.png'),
+      loadingText: Text(
+        "Loading",
+        style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.w300,
+        ),
+      ),
       photoSize: 100.0,
-      loaderColor: Colors.blue,
+      loaderColor: Colors.white10,
     );
   }
 }
