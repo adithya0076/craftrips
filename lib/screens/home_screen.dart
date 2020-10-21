@@ -1,5 +1,6 @@
 import 'package:Craftrips/widgets/destination_carousel.dart';
 import 'package:Craftrips/widgets/hotel_carousel.dart';
+import 'package:Craftrips/widgets/search_place.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -11,6 +12,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+
   int _selectedIndex = 0;
   int _currentTab = 0;
 
@@ -98,23 +101,31 @@ class _HomeScreenState extends State<HomeScreen> {
           setState(() {
             _currentTab = value;
           });
-          if (_currentTab == value) {
+          if (_currentTab == 1) {
             Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => RestaurentScreen()),
             );
           }
+           if (_currentTab == 0) {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => SearchScreen()),
+            );
+          }
+
         },
         items: [
           BottomNavigationBarItem(
             icon: Icon(
               Icons.search,
               size: 30.0,
+              
             ),
+         
             title: SizedBox.shrink(),
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.local_pizza,
+              Icons.restaurant,
               size: 30.0,
             ),
             title: SizedBox.shrink(),
@@ -122,7 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: CircleAvatar(
               radius: 15.0,
-              backgroundImage: NetworkImage('http://i.imgur.com/zL4Krbz.jpg'),
+              backgroundImage: AssetImage('assets/images/horton.jpg'),
             ),
             title: SizedBox.shrink(),
           ),

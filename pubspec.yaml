@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^0.1.3
   font_awesome_flutter: ^8.5.0
   splashscreen:
+  beauty_textfield: ^0.0.1
 
 dev_dependencies:
   flutter_test:
