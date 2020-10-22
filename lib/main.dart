@@ -1,9 +1,19 @@
+import 'package:Craftrips/register.dart';
 import 'package:Craftrips/screens/home_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'package:splashscreen/splashscreen.dart';
 
-void main() => runApp(MyApp());
+import 'firebaseAutoDemo.dart';
+
+
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -27,9 +37,14 @@ class Splash2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return SplashScreen(
       seconds: 6,
-      navigateAfterSeconds: new HomeScreen(),
+      navigateAfterSeconds: new FirebaseAuthDemo(),
       title: new Text(
-        ' ',
+        'Softgenix',
+        style: TextStyle(
+          color: Colors.white,
+          fontFamily: "Roboto",
+          fontWeight: FontWeight.w300,
+        ),
         textScaleFactor: 2,
       ),
       imageBackground: AssetImage("assets/images/hanthana.jpg"),

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "368987488793",
+    "firebase_url": "https://craftrips-5a50b.firebaseio.com",
+    "project_id": "craftrips-5a50b",
+    "storage_bucket": "craftrips-5a50b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368987488793:android:a541af6838dd34a9aea088",
+        "android_client_info": {
+          "package_name": "com.example.Craftrips"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "368987488793-57104m11j1a7uqvvkghqdj77hrlhlbsk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDH1AiQdZ1SO7FGMDi-5eclfo9eTfRhVGk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "368987488793-57104m11j1a7uqvvkghqdj77hrlhlbsk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

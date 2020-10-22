@@ -1,18 +1,25 @@
 import 'package:Craftrips/widgets/destination_carousel.dart';
 import 'package:Craftrips/widgets/hotel_carousel.dart';
 import 'package:Craftrips/widgets/search_place.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../firebaseAutoDemo.dart';
 import 'restaurent_screen.dart';
 
 class HomeScreen extends StatefulWidget {
+  final User user;
+
+  const HomeScreen({Key key, this.user}) : super(key: key);
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+ final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
+ final FirebaseAuth _auth = FirebaseAuth.instance;
 
   int _selectedIndex = 0;
   int _currentTab = 0;
@@ -92,6 +99,17 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 20.0,
             ),
             HotelCarousel(),
+             Container(
+              child: OutlineButton(
+                child: Text("LogOut"),
+                onPressed: () {
+                  _signOut().whenComplete(() {
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (context) => FirebaseAuthDemo()));
+                  });
+                },
+              ),
+            ),
           ],
         ),
       ),
@@ -140,5 +158,10 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
+  }
+ 
+
+  Future _signOut() async {
+    await _auth.signOut();
   }
 }

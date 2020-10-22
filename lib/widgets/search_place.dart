@@ -12,6 +12,7 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
 	title: Text('Find your places !', 
   style: TextStyle(
@@ -20,8 +21,8 @@ class _SearchScreenState extends State<SearchScreen> {
     color: Colors.white,
   ),),
 	// flexibleSpace: Image( image: AssetImage('assets/images/mountblue.jpg'), fit: BoxFit.cover,),
-	backgroundColor: Colors.transparent,
-
+	backgroundColor: Color(0x44000000),  
+  elevation: 0,
 	),
 	
       body:  Container(
@@ -34,7 +35,8 @@ class _SearchScreenState extends State<SearchScreen> {
               ),
             ),
                    child: Column(
-                     children: <Widget> [ 
+                     children: <Widget> [
+                       SizedBox(height: 80,), 
                        BeautyTextfield(
                           width: double.maxFinite,
                           height: 60,
