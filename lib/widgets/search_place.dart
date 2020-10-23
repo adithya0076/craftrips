@@ -7,7 +7,6 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-  final _searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +30,11 @@ class _SearchScreenState extends State<SearchScreen> {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/images/galle.jpg'),
+                colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.7), BlendMode.dstATop),
                 fit: BoxFit.cover,
+                
               ),
+              color: Colors.lightBlueAccent
             ),
                    child: Column(
                      children: <Widget> [

@@ -14,30 +14,93 @@ class _FirebaseAuthDemoState extends State<FirebaseAuthDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Firebase Auth"),
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Container(
-            child: OutlineButton(
-              child: Text("Signin"),
-              onPressed: () => _pushPage(context, SignIn()),
-            ),
-            padding: const EdgeInsets.all(16),
-            alignment: Alignment.center,
+     
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Colors.redAccent,
+          image: DecorationImage(
+            colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.4), BlendMode.dstATop),
+            image: AssetImage('assets/images/anuradhapura.jpg'),
+            fit: BoxFit.cover,
           ),
-          Container(
-            child: OutlineButton(
-              child: Text("Register"),
-              onPressed: () => _pushPage(context, Register()),
+        ),
+      
+                  child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+            Container(
+               alignment: Alignment.center,
+                 margin: const EdgeInsets.only(top: 10.0,),
+               padding: const EdgeInsets.only(left: 20, right: 20),
+               child: SizedBox(child: Text('Already have an account ?', style: TextStyle(color: Colors.white),),),
             ),
-            padding: const EdgeInsets.all(16),
-            alignment: Alignment.center,
+              Container(
+               margin: const EdgeInsets.only(top: 10.0,),
+               padding: const EdgeInsets.only(left: 20, right: 20),
+             
+                                child: SizedBox(
+                                    width: 300.0,
+          height: 50.0,
+                                                                  child: OutlineButton(
+                                  
+                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0),),
+                    child: Text("Sign in", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold,
+                    ),
+                    ),
+                  borderSide: BorderSide(
+                    style: BorderStyle.solid,
+                    width: 1.8
+                  ),
+
+                    color: Colors.white,
+                     highlightedBorderColor: Colors.redAccent,
+                    onPressed: () => _pushPage(context, SignIn()),
+                  ),
+                                ),
+                
+                
+                alignment: Alignment.center,
+              ),
+              SizedBox(height: 10,),
+               Container(
+               alignment: Alignment.center,
+                 margin: const EdgeInsets.only(top: 10.0,),
+               padding: const EdgeInsets.only(left: 20, right: 20),
+               child: SizedBox(child: Text('Create an account', style: TextStyle(color: Colors.white),),),
+            ),
+              Container(
+                 margin: const EdgeInsets.only(top: 10.0,),
+               padding: const EdgeInsets.only(left: 20, right: 20),
+             
+                                child: SizedBox(
+                                    width: 300.0,
+          height: 50.0,
+                                                                  child: OutlineButton(
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0),),
+                    child: Text("Register", 
+                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold,),
+                    ),
+                    color: Colors.redAccent,
+                     borderSide: BorderSide(
+                    style: BorderStyle.solid,
+                    width: 1.8
+                  ),
+                          highlightedBorderColor: Colors.white, 
+                    onPressed: () => _pushPage(context, Register()),
+                  ),
+                                ),
+                
+                 
+                alignment: Alignment.center,
+              ),
+            
+            ],
+            
           ),
-        ],
+      
       ),
     );
   }

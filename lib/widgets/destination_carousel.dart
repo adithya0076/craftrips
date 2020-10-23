@@ -1,5 +1,6 @@
 import 'package:Craftrips/models/destination_model.dart';
 import 'package:Craftrips/screens/destination_scren.dart';
+import 'package:Craftrips/widgets/destinationall.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -22,7 +23,9 @@ class DestinationCarousel extends StatelessWidget {
                 ),
               ),
               GestureDetector(
-                onTap: () => print('See All now'),
+                 onTap: () =>   Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => DestinatonSeeAll()),
+            ),
                 child: Text(
                   'See All',
                   style: TextStyle(
@@ -32,6 +35,7 @@ class DestinationCarousel extends StatelessWidget {
                     letterSpacing: 1.0,
                   ),
                 ),
+                
               ),
             ],
           ),

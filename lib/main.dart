@@ -1,5 +1,3 @@
-import 'package:Craftrips/register.dart';
-import 'package:Craftrips/screens/home_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -39,14 +37,16 @@ class Splash2 extends StatelessWidget {
       seconds: 6,
       navigateAfterSeconds: new FirebaseAuthDemo(),
       title: new Text(
-        'Softgenix',
+        'BY SOFTGENIX',
         style: TextStyle(
+          fontSize: 10,
           color: Colors.white,
           fontFamily: "Roboto",
-          fontWeight: FontWeight.w300,
+          fontWeight: FontWeight.bold,
         ),
         textScaleFactor: 2,
       ),
+      
       imageBackground: AssetImage("assets/images/hanthana.jpg"),
       image: new Image.asset('assets/images/craftripsnew.png'),
       loadingText: Text(

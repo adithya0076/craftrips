@@ -15,8 +15,6 @@ class _RegisterState extends State<Register> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-  bool _isSuccess;
-  String _userEmail;
   @override
   void dispose() {
     _emailController.dispose();
@@ -27,63 +25,81 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Form(
-            key: _formKey,
-            child: Card(
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    TextFormField(
-                      controller: _displayName,
-                      decoration: const InputDecoration(labelText: 'Full Name'),
-                      validator: (String value) {
-                        if (value.isEmpty) {
-                          return 'Please enter some text';
-                        }
-                        return null;
-                      },
-                    ),
-                    TextFormField(
-                      controller: _emailController,
-                      decoration: const InputDecoration(labelText: 'Email'),
-                      validator: (String value) {
-                        if (value.isEmpty) {
-                          return 'Please enter some text';
-                        }
-                        return null;
-                      },
-                    ),
-                    TextFormField(
-                      controller: _passwordController,
-                      decoration: const InputDecoration(labelText: 'Password'),
-                      validator: (String value) {
-                        if (value.isEmpty) {
-                          return 'Please enter some text';
-                        }
-                        return null;
-                      },
-                      obscureText: true,
-                    ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(vertical: 16.0),
-                      alignment: Alignment.center,
-                      child: OutlineButton(
-                        child: Text("register"),
-                        onPressed: () async {
-                          if (_formKey.currentState.validate()) {
-                            _registerAccount();
+      body: Container(
+         height: double.infinity,
+        width: double.infinity,
+        decoration: BoxDecoration(
+     
+          image: DecorationImage(
+            colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.4), BlendMode.dstATop),
+            image: AssetImage('assets/images/galle.jpg'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
+          child: Form(
+              key: _formKey,
+            
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      TextFormField(
+                        controller: _displayName,
+                        decoration: const InputDecoration(labelText: 'Full Name'),
+                        validator: (String value) {
+                          if (value.isEmpty) {
+                            return 'Please enter some text';
                           }
+                          return null;
                         },
                       ),
-                    ),
-                  ],
+                      TextFormField(
+                        controller: _emailController,
+                        decoration: const InputDecoration(labelText: 'Email'),
+                        validator: (String value) {
+                          if (value.isEmpty) {
+                            return 'Please enter some text';
+                          }
+                          return null;
+                        },
+                      ),
+                      TextFormField(
+                        controller: _passwordController,
+                        decoration: const InputDecoration(labelText: 'Password'),
+                        validator: (String value) {
+                          if (value.isEmpty) {
+                            return 'Please enter some text';
+                          }
+                          return null;
+                        },
+                        obscureText: true,
+                      ),
+                      Container(
+                        padding: const EdgeInsets.symmetric(vertical: 16.0),
+                        alignment: Alignment.center,
+                        child: SizedBox(
+                           width: 300.0,
+          height: 50.0,
+                                                  child: RaisedButton(
+                            child: Text("Register", style: TextStyle(fontWeight: FontWeight.bold,),),
+                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0),),
+                            onPressed: () async {
+                              if (_formKey.currentState.validate()) {
+                                _registerAccount();
+                              }
+                            },
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
+           
               ),
-            )),
+        ),
       ),
     );
   }
@@ -106,7 +122,6 @@ class _RegisterState extends State<Register> {
                 user: user1,
               )));
     } else {
-      _isSuccess = false;
     }
   }
 }

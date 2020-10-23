@@ -17,7 +17,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
- final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
  final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -100,8 +99,10 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             HotelCarousel(),
              Container(
-              child: OutlineButton(
-                child: Text("LogOut"),
+              child: RaisedButton(
+                child: Text("Log out", style: TextStyle(fontWeight: FontWeight.bold),),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0),),
+                color: Colors.redAccent,
                 onPressed: () {
                   _signOut().whenComplete(() {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(

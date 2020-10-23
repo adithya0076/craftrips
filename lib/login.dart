@@ -21,11 +21,23 @@ class _SignInState extends State<SignIn> {
     return Scaffold(
       key: _scaffoldKey,
       body: Builder(builder: (BuildContext context) {
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            withEmailPassword(),
-          ],
+        return Container(
+           height: double.infinity,
+        width: double.infinity,
+        decoration: BoxDecoration(
+     
+          image: DecorationImage(
+            colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.4), BlendMode.dstATop),
+            image: AssetImage('assets/images/nuwaraeliya.jpg'),
+            fit: BoxFit.cover,
+          ),
+        ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              withEmailPassword(),
+            ],
+          ),
         );
       }),
     );
@@ -34,7 +46,7 @@ class _SignInState extends State<SignIn> {
   Widget withEmailPassword() {
     return Form(
         key: _formKey,
-        child: Card(
+   
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
@@ -67,19 +79,24 @@ class _SignInState extends State<SignIn> {
                 Container(
                   padding: const EdgeInsets.only(top: 16.0),
                   alignment: Alignment.center,
-                  child: OutlineButton(
-                    child: Text("Sign In"),
-                    onPressed: () async {
-                      if (_formKey.currentState.validate()) {
-                        _signInWithEmailAndPassword();
-                      }
-                    },
+                  child: SizedBox(
+                    width: 300,
+                    height: 50,
+                                      child: RaisedButton(
+                      child: Text("Sign In", style: TextStyle(fontWeight: FontWeight.bold),),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0),),
+                      onPressed: () async {
+                        if (_formKey.currentState.validate()) {
+                          _signInWithEmailAndPassword();
+                        }
+                      },
+                    ),
                   ),
                 ),
               ],
             ),
           ),
-        ));
+        );
   }
 
   @override
@@ -111,8 +128,5 @@ class _SignInState extends State<SignIn> {
     }
   }
 
-  void _signOut() async {
-    await _auth.signOut();
-  }
 }
 
