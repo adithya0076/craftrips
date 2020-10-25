@@ -7,6 +7,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../firebaseAutoDemo.dart';
 import 'restaurent_screen.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class HomeScreen extends StatefulWidget {
   final User user;
@@ -17,8 +18,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
- final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   int _selectedIndex = 0;
   int _currentTab = 0;
@@ -67,15 +67,17 @@ class _HomeScreenState extends State<HomeScreen> {
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(left: 20.0, right: 120.0),
-              child: Text(
-                'What would you like to find ?',
-                style: TextStyle(
-                  fontSize: 30.0,
-                  color: Colors.red[300],
-                  fontFamily: "Roboto",
-                  fontWeight: FontWeight.w300,
-                ),
-              ),
+              child: FadeAnimatedTextKit(
+                  onTap: () {
+                    print("Tap Event");
+                  },
+                  text: ["DESTINATIONS", "HOTELS", "RIDES", "RESTAURANTS"],
+                  textStyle:
+                      TextStyle(fontSize: 32.0, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.start,
+                  alignment:
+                      AlignmentDirectional.topStart // or Alignment.topLeft
+                  ),
             ),
             SizedBox(
               height: 20.0,
@@ -98,10 +100,15 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 20.0,
             ),
             HotelCarousel(),
-             Container(
+            Container(
               child: RaisedButton(
-                child: Text("Log out", style: TextStyle(fontWeight: FontWeight.bold),),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0),),
+                child: Text(
+                  "Log out",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                ),
                 color: Colors.redAccent,
                 onPressed: () {
                   _signOut().whenComplete(() {
@@ -125,21 +132,18 @@ class _HomeScreenState extends State<HomeScreen> {
               MaterialPageRoute(builder: (context) => RestaurentScreen()),
             );
           }
-           if (_currentTab == 0) {
+          if (_currentTab == 0) {
             Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => SearchScreen()),
             );
           }
-
         },
         items: [
           BottomNavigationBarItem(
             icon: Icon(
               Icons.search,
               size: 30.0,
-              
             ),
-         
             title: SizedBox.shrink(),
           ),
           BottomNavigationBarItem(
@@ -160,7 +164,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
- 
 
   Future _signOut() async {
     await _auth.signOut();

@@ -57,6 +57,7 @@ class Splash2 extends StatelessWidget {
         ),
       ),
       photoSize: 100.0,
+    
       loaderColor: Colors.white10,
     );
   }
