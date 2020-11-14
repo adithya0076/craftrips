@@ -66,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: EdgeInsets.symmetric(vertical: 30.0),
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.only(left: 20.0, right: 120.0),
+              padding: EdgeInsets.only(left: 10.0, right: 110.0),
               child: FadeAnimatedTextKit(
                   onTap: () {
                     print("Tap Event");
