@@ -1,122 +1,46 @@
+import 'package:Craftrips/models/restaurent_model.dart';
+import 'package:Craftrips/widgets/restaurent_item.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class RestaurentScreen extends StatelessWidget {
-
-
-
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-	backgroundColor: Colors.blue[300],
-	appBar: AppBar(
-	title: Text('Restaurents',
-	 style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.w400,
-              color: Colors.white,
-			  fontFamily: "Roboto",
-            ),
-	),
-	flexibleSpace: Image( image: AssetImage('assets/images/mountblue.jpg'), fit: BoxFit.cover,),
-	backgroundColor: Colors.transparent,
-	),
-	
+            extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        title: Text(
+          'Restaurents',
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.w400,
+            color: Colors.white,
+            fontFamily: "RobotoCondensed",
+          ),
+        ),
+        
+        backgroundColor: Color(0x44000000),
+        elevation: 0,
+      ),
       body: Column(
-	 
         children: <Widget>[
-           Expanded(
-                    child: ListView(
-             children: <Widget>[
-               Card(
-                 elevation: 5,
-                 shape: RoundedRectangleBorder(
-                   borderRadius: BorderRadius.circular(10),
-                 ),
-                 child: ListTile(
-                   leading: Image.asset('assets/images/murano.jpg'),
-                   title: Text('Dinemore'),
-                   subtitle: Text('Kandy,SriLanka'),
-                   trailing: Icon(Icons.restaurant),
-                   onTap: () {},
-                  
-                 ),
-               ),
-               Divider(),
-               Card(
-                    elevation: 5,
-                 shape: RoundedRectangleBorder(
-                   borderRadius: BorderRadius.circular(10),
-                   ),
-                 child: ListTile(
-                    leading: Image.asset('assets/images/mountblue.jpg'),
-                   title: Text('Hill top'),
-                   subtitle: Text('Kandy,SriLanka'),
-                   trailing: Icon(Icons.restaurant),
-                   onTap: () {},
-                 ),
-               ),
-			   Divider(),
-               Card(
-                    elevation: 5,
-                 shape: RoundedRectangleBorder(
-                   borderRadius: BorderRadius.circular(10),
-                   ),
-                 child: ListTile(
-                    leading: Image.asset('assets/images/ozo.jpg'),
-                   title: Text('Ozo Kandy'),
-                   subtitle: Text('Kandy,SriLanka'),
-                   trailing: Icon(Icons.restaurant),
-                   onTap: () {},
-                 ),
-               ),
-			   Divider(),
-               Card(
-                    elevation: 5,
-                 shape: RoundedRectangleBorder(
-                   borderRadius: BorderRadius.circular(10),
-                   ),
-                 child: ListTile(
-                    leading: Image.asset('assets/images/amayahills.jpg'),
-                   title: Text('Amaya hills Kandy'),
-                   subtitle: Text('Kandy,SriLanka'),
-                   trailing: Icon(Icons.restaurant),
-                   onTap: () {},
-                 ),
-               ),
-			   Divider(),
-               Card(
-                    elevation: 5,
-                 shape: RoundedRectangleBorder(
-                   borderRadius: BorderRadius.circular(10),
-                   ),
-                 child: ListTile(
-                    leading: Image.asset('assets/images/horton.jpg'),
-                   title: Text('Horton restaurant'),
-                   subtitle: Text('Kandy,SriLanka'),
-                   trailing: Icon(Icons.restaurant),
-                   onTap: () {},
-                 ),
-               ),
-			   Divider(),
-               Card(
-                    elevation: 5,
-                 shape: RoundedRectangleBorder(
-                   borderRadius: BorderRadius.circular(10),
-                   ),
-                 child: ListTile(
-                    leading: Image.asset('assets/images/nuwaraeliya.jpg'),
-                   title: Text('Nuwara restaurant'),
-                   subtitle: Text('Kandy,SriLanka'),
-                   trailing: Icon(Icons.restaurant),
-                   onTap: () {},
-                 ),
-               ),
-             ],
-           ),
-         ),
-            
-           
-          ],
+          SizedBox(height: 50),
+          Expanded(
+            child: ListView.builder(
+              itemBuilder: (BuildContext ctx, int index) {
+                Restaurent restaurent = restaurents[index];
+                return RestaurentItem(
+                  id: restaurent.id,
+                  title: restaurent.title,
+                  imageUrl: restaurent.imageUrl,
+                  address: restaurent.address,
+                );
+              },
+              itemCount: restaurents.length,
+            ),
+          ),
+        ],
       ),
     );
   }
