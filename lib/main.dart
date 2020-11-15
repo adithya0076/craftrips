@@ -37,11 +37,11 @@ class Splash2 extends StatelessWidget {
       seconds: 6,
       navigateAfterSeconds: new FirebaseAuthDemo(),
       title: new Text(
-        'BY SOFTGENIX',
+        'By SOFTGENIX',
         style: TextStyle(
           fontSize: 10,
           color: Colors.white,
-          fontFamily: "Roboto",
+         fontFamily: "RobotoCondensed",
           fontWeight: FontWeight.bold,
         ),
         textScaleFactor: 2,
@@ -54,6 +54,7 @@ class Splash2 extends StatelessWidget {
         style: TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.w300,
+          fontFamily: "RobotoCondensed",
         ),
       ),
       photoSize: 100.0,

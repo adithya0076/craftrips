@@ -1,4 +1,5 @@
 
+import 'package:Craftrips/widgets/restaurent_detail.dart';
 import 'package:flutter/material.dart';
 
 class RestaurentItem extends StatelessWidget {
@@ -16,22 +17,19 @@ class RestaurentItem extends StatelessWidget {
 
   });
 
-//  void selectMeal(BuildContext context) {
-//     Navigator.of(context)
-//         .pushNamed(
-//       MealDetailScreen.routeName,
-//       arguments: id,
-//     )
-//         .then((result) {
-//           if(result != null){
-//       print(result);
-//         }
-//     });
+  void selectMeal(BuildContext context) {
+     Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => RestaurentDetail(id,title,imageUrl,address),
+              
+              ),
+            
+            );
+  }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      //onTap: () => selectMeal(context),
+      onTap: () => selectMeal(context),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),

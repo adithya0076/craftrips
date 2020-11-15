@@ -71,9 +71,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   onTap: () {
                     print("Tap Event");
                   },
-                  text: ["DESTINATIONS", "HOTELS", "RIDES", "RESTAURANTS"],
+                  text: ["DESTINATIONS", "HOTELS", "RIDES", "RESTAURENTS"],
                   textStyle:
-                      TextStyle(fontSize: 32.0, fontWeight: FontWeight.bold),
+                      TextStyle(fontSize: 32.0, fontWeight: FontWeight.bold,
+                     fontFamily: "RobotoCondensed",
+                      ),
                   textAlign: TextAlign.start,
                   alignment:
                       AlignmentDirectional.topStart // or Alignment.topLeft
