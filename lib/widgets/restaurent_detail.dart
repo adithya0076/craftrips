@@ -10,6 +10,7 @@ class RestaurentDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.lime[100],
       appBar: AppBar(
         title: Text(title),
       ),
