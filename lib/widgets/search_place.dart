@@ -6,7 +6,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import 'package:search_map_place/search_map_place.dart';
 
-String apiKey;
+String apiKey="AIzaSyD6_hOjYwTwCD-WYG33ol5oWmikS8diRDc";
 
 class SearchScreen extends StatefulWidget {
   @override
