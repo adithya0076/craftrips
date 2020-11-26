@@ -42,6 +42,7 @@ class _SearchScreenState extends State<SearchScreen>
               apiKey: "AIzaSyD6_hOjYwTwCD-WYG33ol5oWmikS8diRDc",
               onSelected: (place) async {
                 final geolocation = await place.geolocation;
+           
                 final GoogleMapController controller =
                     await _mapController.future;
                 controller.animateCamera(

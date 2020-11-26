@@ -1,11 +1,12 @@
 import 'package:Craftrips/widgets/destination_carousel.dart';
 import 'package:Craftrips/widgets/hotel_carousel.dart';
+import 'package:Craftrips/widgets/profile_screen.dart';
 import 'package:Craftrips/widgets/search_place.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../firebaseAutoDemo.dart';
+
 import 'restaurent_screen.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
@@ -18,7 +19,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
+ 
 
   int _selectedIndex = 0;
   int _currentTab = 0;
@@ -102,24 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 20.0,
             ),
             HotelCarousel(),
-            Container(
-              child: RaisedButton(
-                child: Text(
-                  "Log out",
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                ),
-                color: Colors.redAccent,
-                onPressed: () {
-                  _signOut().whenComplete(() {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => FirebaseAuthDemo()));
-                  });
-                },
-              ),
-            ),
+            
           ],
         ),
       ),
@@ -139,6 +123,11 @@ class _HomeScreenState extends State<HomeScreen> {
               MaterialPageRoute(builder: (context) => SearchScreen()),
             );
           }
+           if (_currentTab == 2) {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => ProfileScreen()),
+            );
+          }
         },
         items: [
           BottomNavigationBarItem(
@@ -146,6 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Icons.search,
               size: 30.0,
             ),
+            // ignore: deprecated_member_use
             title: SizedBox.shrink(),
           ),
           BottomNavigationBarItem(
@@ -153,6 +143,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Icons.restaurant,
               size: 30.0,
             ),
+            // ignore: deprecated_member_use
             title: SizedBox.shrink(),
           ),
           BottomNavigationBarItem(
@@ -160,6 +151,7 @@ class _HomeScreenState extends State<HomeScreen> {
               radius: 15.0,
               backgroundImage: AssetImage('assets/images/horton.jpg'),
             ),
+            // ignore: deprecated_member_use
             title: SizedBox.shrink(),
           ),
         ],
@@ -167,7 +159,5 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Future _signOut() async {
-    await _auth.signOut();
-  }
+ 
 }
