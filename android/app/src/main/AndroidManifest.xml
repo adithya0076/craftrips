@@ -12,13 +12,13 @@ android:name="android.permission.ACCESS_FINE_LOCATION" />
 android:name="android.permission.ACCESS_COARSE_LOCATION" /> -->
 
     <application
-
         android:name="io.flutter.app.FlutterApplication"
         android:label="Craftrips"
         android:icon="@mipmap/launcher_icon">
         
              <meta-data android:name="com.google.android.geo.API_KEY"
                   android:value="AIzaSyD6_hOjYwTwCD-WYG33ol5oWmikS8diRDc"/> 
+        
       
         <activity
             android:name=".MainActivity"

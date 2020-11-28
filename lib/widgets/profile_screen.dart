@@ -1,10 +1,34 @@
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../firebaseAutoDemo.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
+  @override
+  _ProfileScreenState createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  File _image;
+  final picker = ImagePicker();
+
+  Future getImage() async {
+    final pickedFile = await picker.getImage(source: ImageSource.camera);
+
+    setState(() {
+      if (pickedFile != null) {
+        _image = File(pickedFile.path);
+      } else {
+        print('No image selected.');
+      }
+    });
+  }
+
   final FirebaseAuth _auth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,14 +65,20 @@ class ProfileScreen extends StatelessWidget {
                   children: <Widget>[
                     CircleAvatar(
                       backgroundColor: Colors.white70,
-                      minRadius: 60.0,
-                      child: CircleAvatar(
-                        radius: 50.0,
-                        backgroundImage: NetworkImage(
-                            'https://i3.sndcdn.com/avatars-yC3pwHuibIrlognX-Zxlvww-t500x500.jpg'),
-                      ),
+                     
+                     
+                      radius: 50.0,
+                      child: Image.network("https://i3.sndcdn.com/avatars-yC3pwHuibIrlognX-Zxlvww-t500x500.jpg"),
+                      // child: _image == null
+                      //     ? Text('No image selected.')
+                      //     : Image.file(_image),
                     ),
                   ],
+                ),
+                GestureDetector(
+                  onTap: () => getImage(),
+                  child:  Icon(Icons.add_a_photo),
+                  
                 ),
                 SizedBox(
                   height: 10,

@@ -37,9 +37,10 @@ dependencies:
   search_map_place: ^0.3.0
   flutter_polyline_points:   
   google_maps_flutter: ^0.5.13
+  image_picker: ^0.6.7+14
   # fluttertoast: ^7.1.1 
 
-dev_dependencies:
+dev_dependencies: 
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: "^0.7.3"  
