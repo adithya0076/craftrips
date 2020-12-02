@@ -35,6 +35,7 @@ class RestaurentScreen extends StatelessWidget {
                   title: restaurent.title,
                   imageUrl: restaurent.imageUrl,
                   address: restaurent.address,
+                  description: restaurent.description,
                 );
               },
               itemCount: restaurents.length,

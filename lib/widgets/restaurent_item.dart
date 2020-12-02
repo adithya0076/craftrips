@@ -1,29 +1,28 @@
-
 import 'package:Craftrips/widgets/restaurent_detail.dart';
 import 'package:flutter/material.dart';
 
 class RestaurentItem extends StatelessWidget {
-   final String id;
-  final  String title;
-   final String  imageUrl;
-   final String address;
-
+  final String id;
+  final String title;
+  final String imageUrl;
+  final String address;
+  final String description;
 
   RestaurentItem({
-     this.id,
-     this.title,
+    this.id,
+    this.title,
     this.imageUrl,
-     this.address,
-
+    this.address,
+    this.description,
   });
 
   void selectMeal(BuildContext context) {
-     Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => RestaurentDetail(id,title,imageUrl,address),
-              
-              ),
-            
-            );
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) =>
+            RestaurentDetail(id, title, imageUrl, address, description),
+      ),
+    );
   }
 
   @override
@@ -63,7 +62,7 @@ class RestaurentItem extends StatelessWidget {
                       horizontal: 20,
                     ),
                     child: Text(
-                     title,
+                      title,
                       style: TextStyle(
                         fontSize: 26,
                         color: Colors.white,
@@ -85,14 +84,12 @@ class RestaurentItem extends StatelessWidget {
                   Row(
                     children: <Widget>[
                       Icon(Icons.location_on),
-                     
-                      
                     ],
                   ),
                   Row(
                     children: <Widget>[
                       Text(
-                      address,
+                        address,
                         style: TextStyle(
                           fontSize: 20,
                           fontFamily: 'RobotoCondensed',
@@ -101,7 +98,7 @@ class RestaurentItem extends StatelessWidget {
                       ),
                     ],
                   ),
-              ],
+                ],
               ),
             ),
           ],

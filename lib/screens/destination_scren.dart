@@ -164,7 +164,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Container(
-                                  width: 120.0,
+                                  width: 100.0,
                                   child: Text(
                                     activity.name,
                                     style: TextStyle(
@@ -180,7 +180,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                     Text(
                                       '\$${activity.price}',
                                       style: TextStyle(
-                                        fontSize: 22.0,
+                                        fontSize: 18.0,
                                         fontWeight: FontWeight.w600,
                                       ),
                                     ),
@@ -188,7 +188,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                       'per pax',
                                       style: TextStyle(
                                         color: Colors.grey,
-                                        fontSize: 22.0,
+                                        fontSize: 18.0,
                                         fontWeight: FontWeight.w600,
                                       ),
                                     ),
