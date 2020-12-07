@@ -31,4 +31,11 @@ final List<Restaurent> restaurents = [
     address: 'Kandy,Sri lanka',
     description: 'Choose from a wide range of properties which Booking.com offers. Search now! Book at Ozo Kandy, Kandy. No Reservation Costs. Great Rates. Secret Deals. No booking fees. Save money. Recent guest reviews. 24/7 Customer Service. Great choice.',
   ),
+  Restaurent(
+    id: 'r4',
+    title: 'Ozo Kandy',
+    imageUrl: 'assets/images/ozo.jpg',
+    address: 'Kandy,Sri lanka',
+    description: 'Choose from a wide range of properties which Booking.com offers. Search now! Book at Ozo Kandy, Kandy. No Reservation Costs. Great Rates. Secret Deals. No booking fees. Save money. Recent guest reviews. 24/7 Customer Service. Great choice.',
+  ),
 ];

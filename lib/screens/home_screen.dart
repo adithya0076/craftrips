@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
     FontAwesomeIcons.plane,
     FontAwesomeIcons.bed,
     FontAwesomeIcons.walking,
-    FontAwesomeIcons.biking,
+    FontAwesomeIcons.car,
   ];
 
   Widget _buildIcon(int index) {
@@ -37,7 +37,11 @@ class _HomeScreenState extends State<HomeScreen> {
         setState(() {
           _selectedIndex = index;
         });
-        print(_selectedIndex);
+        if (_selectedIndex == 0) {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => RestaurentScreen()),
+            );
+          }
       },
       child: Container(
         height: 60.0,

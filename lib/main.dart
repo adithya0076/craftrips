@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 import 'firebaseAutoDemo.dart';
-
-
+import 'screens/home_screen.dart';
+import 'const.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,6 +25,9 @@ class MyApp extends StatelessWidget {
         accentColor: Color(0xFFD8ECF1),
         scaffoldBackgroundColor: Color(0xFFF3F5F7),
       ),
+ /*title: Constants.appName,
+      theme: Constants.lightTheme,
+      darkTheme: Constants.lightTheme,*/
       home: Splash2(),
     );
   }

@@ -44,7 +44,7 @@ class DestinationCarousel extends StatelessWidget {
           height: 300.0,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: destinations.length,
+            itemCount: 4,
             itemBuilder: (BuildContext context, int index) {
               Destination destination = destinations[index];
               return GestureDetector(
@@ -118,6 +118,7 @@ class DestinationCarousel extends StatelessWidget {
                               bottom: 10.0,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
+							//	mainAxisAlignment: MainAxisAlignment.end,
                                 children: <Widget>[
                                   Row(
                                     children: <Widget>[

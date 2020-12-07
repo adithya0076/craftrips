@@ -1,34 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:Craftrips/models/destination_model.dart';
+import 'package:Craftrips/models/hotel_model.dart';
 
-import 'package:Craftrips/screens/restaurent_screen.dart';
-
-class DestinatonSeeAll extends StatefulWidget {
+class HotelAll extends StatefulWidget {
   @override
-  _DestinatonSeeAllState createState() => _DestinatonSeeAllState();
+  _HotelAllState createState() => _HotelAllState();
 }
 
-class _DestinatonSeeAllState extends State<DestinatonSeeAll> {
-
-void selectMeal(BuildContext context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) =>
-            RestaurentScreen(),
-      ),
-    );
-  }
-
-
-
-
-
+class _HotelAllState extends State<HotelAll> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
 	    extendBodyBehindAppBar: true,
 	 appBar: AppBar(
-        title: Text('Destinations',
+        title: Text('Hotels',
 		style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w400,
@@ -43,9 +28,9 @@ void selectMeal(BuildContext context) {
           Expanded(
             child: ListView.builder(
               itemBuilder: (BuildContext ctx, int index) {
-                Destination destination = destinations[index];
+                Hotel hotel = hotels[index];
                 return InkWell(
-      onTap: () => selectMeal(context),
+      onTap: () {},
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
@@ -62,7 +47,7 @@ void selectMeal(BuildContext context) {
                     topRight: Radius.circular(15),
                   ),
                   child: Image.asset(
-                    destination.imageUrl,
+                    hotel.imageUrl,
                     height: 250,
                     width: double.infinity,
                     fit: BoxFit.cover,
@@ -79,7 +64,7 @@ void selectMeal(BuildContext context) {
                       horizontal: 20,
                     ),
                     child: Text(
-                      destination.city,
+                      hotel.name,
                       style: TextStyle(
                         fontSize: 26,
                         color: Colors.white,
@@ -106,7 +91,7 @@ void selectMeal(BuildContext context) {
                   Row(
                     children: <Widget>[
                       Text(
-                        destination.country,
+                       hotel.address,
                         style: TextStyle(
                           fontSize: 20,
                           fontFamily: 'RobotoCondensed',
@@ -123,7 +108,7 @@ void selectMeal(BuildContext context) {
       ),
     );
               },
-              itemCount: destinations.length,
+              itemCount: hotels.length,
             ),
           ),
         ],

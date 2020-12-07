@@ -105,7 +105,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                           ),
                         ),
                         Row(
-                          children: <Widget>[
+                          children: <Widget>[ 
                             Icon(
                               FontAwesomeIcons.locationArrow,
                               size: 10,

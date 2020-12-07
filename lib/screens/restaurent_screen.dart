@@ -8,24 +8,25 @@ class RestaurentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            extendBodyBehindAppBar: true,
+           extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: Text(
-          'Restaurents',
+          'Nearby Restaurents',
           style: TextStyle(
-            fontSize: 30,
+            fontSize: 20,
             fontWeight: FontWeight.w400,
             color: Colors.white,
-            fontFamily: "RobotoCondensed",
+            fontFamily: "Roboto",
           ),
         ),
         
-        backgroundColor: Color(0x44000000),
+       // backgroundColor: Color(0x44000000),
+	//	 backgroundColor: Colors.green,
         elevation: 0,
       ),
       body: Column(
         children: <Widget>[
-          SizedBox(height: 50),
+        //  SizedBox(height: 0),
           Expanded(
             child: ListView.builder(
               itemBuilder: (BuildContext ctx, int index) {

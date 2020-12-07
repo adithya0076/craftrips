@@ -32,15 +32,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+	    extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.purpleAccent.withOpacity(0.7),
+        backgroundColor: Colors.lightBlueAccent.withOpacity(0.7),
+		//backgroundColor: Color(0x44000000),
         title: Text(
           'User Profile',
           style: TextStyle(
-            fontSize: 30,
+            fontSize: 20,
             fontWeight: FontWeight.w400,
             color: Colors.white,
-            fontFamily: "RobotoCondensed",
+            fontFamily: "Roboto",
           ),
         ),
       ),
@@ -50,7 +52,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             height: 250,
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [Colors.purple, Colors.deepPurple.shade300],
+                colors: [Colors.lightBlueAccent,Colors.lightBlueAccent[700]],
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
                 stops: [0.5, 0.9],
@@ -64,9 +66,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     CircleAvatar(
-                      backgroundColor: Colors.white70,
-                     
-                     
+                      backgroundColor: Colors.white70,         
                       radius: 50.0,
                       child: Image.network("https://i3.sndcdn.com/avatars-yC3pwHuibIrlognX-Zxlvww-t500x500.jpg"),
                       // child: _image == null
@@ -131,7 +131,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
-              color: Colors.purpleAccent,
+              color: Colors.lightBlueAccent,
               onPressed: () {
                 _signOut().whenComplete(() {
                   Navigator.of(context).pushReplacement(MaterialPageRoute(

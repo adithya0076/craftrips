@@ -2,7 +2,7 @@
 import 'package:Craftrips/models/hotel_model.dart';
 import 'package:Craftrips/screens/hotel_screen.dart';
 import 'package:flutter/material.dart';
-
+import 'package:Craftrips/widgets/hotelall.dart';
 class HotelCarousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,9 @@ class HotelCarousel extends StatelessWidget {
                 ),
               ),
               GestureDetector(
-                onTap: () => print('See All'),
+                onTap: () =>   Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => HotelAll()),
+            ),
                 child: Text(
                   'See All',
                   style: TextStyle(
@@ -73,7 +75,7 @@ class HotelCarousel extends StatelessWidget {
                                 Text(
                                   hotel.name,
                                   style: TextStyle(
-                                      fontSize: 22.0,
+                                      fontSize: 20.0,
                                       fontWeight: FontWeight.w600,
                                       letterSpacing: 1.2),
                                 ),
@@ -81,6 +83,7 @@ class HotelCarousel extends StatelessWidget {
                                 Text(
                                   hotel.address,
                                   style: TextStyle(
+									fontSize: 13,
                                     color: Colors.grey,
                                   ),
                                 ),
@@ -88,7 +91,7 @@ class HotelCarousel extends StatelessWidget {
                                 Text(
                                   '\$${hotel.price} / night',
                                   style: TextStyle(
-                                    fontSize: 18.0,
+                                    fontSize: 12.0,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),

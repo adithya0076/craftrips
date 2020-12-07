@@ -89,5 +89,11 @@ List<Destination> destinations = [
     description: 'Visit Anuradhapura for an amazing and unforgettable adventure.',
     activities: activities,
   ),
-  
+  Destination(
+    imageUrl: 'assets/images/galle.jpg',
+    city: 'Hikkaduwa',
+    country: 'Sri Lanka',
+    description: 'Visit Hikkaduwa for an amazing and unforgettable adventure.',
+    activities: activities,
+  ),
 ];

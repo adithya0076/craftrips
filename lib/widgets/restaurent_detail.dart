@@ -11,13 +11,22 @@ class RestaurentDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lime[100],
+      backgroundColor: Colors.white,
+	         extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: Text(title),
+        title: Text('Restaurents',
+		style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w400,
+            color: Colors.white,
+            fontFamily: "Roboto",
+          ),
+		),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
+		   SizedBox(height: 30),
             Container(
               height: 300,
               width: double.infinity,
@@ -43,14 +52,16 @@ class RestaurentDetail extends StatelessWidget {
               padding: const EdgeInsets.only(left: 20, right: 20),
               margin: EdgeInsets.symmetric(vertical: 10),
               color: Colors.white10,
+              child: Card( 
               child: Text(
                 description,
                 style: TextStyle(
                   fontSize: 20,
-                  fontFamily: 'RobotoCondensed',
+                  fontFamily: 'Roboto',
                   fontWeight: FontWeight.w300,
                 ),
               ),
+             ),
             ),
           ],
         ),
